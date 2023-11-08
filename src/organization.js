@@ -26,6 +26,10 @@ export const dataStub = [
 
 export const options = {
     allowHtml: true,
+    allowCollapse: true,
+    compactRows: true,
+    nodeClass: "googleNode",
+    size: 'small',
 };
 
 
@@ -38,6 +42,21 @@ const Organization = () => {
     const processOrgJson = (orgjson) => {
         let deptjson = orgjson.organization.departments ;
         setDepartments(deptjson);
+
+        let tempData = []
+        tempData.push(["Org", "", "TBD"])
+        
+        deptjson.map(d => {
+            let mgrArray=[d.managerName,"Org",d.name]
+            tempData.push(mgrArray)
+            d.employees.map( e => {
+                let tempe = [e.name,d.managerName,e.office]
+                tempData.push(tempe)
+            })
+        });
+        console.log(tempData);
+        setGraphData(tempData);
+            
 
     }
 
@@ -73,12 +92,15 @@ const Organization = () => {
             
         <Chart 
             chartType = "OrgChart"
-            data={dataStub}
+            data={graphData}
             options={options}
-            width="75%"
-            height="200px"
         />
-
+            {
+            /*
+            width="100px"
+            height="400px"
+            */
+            }
         {/*JSON.stringify(orgData)*/}
         {/*JSON.stringify(departments)*/}
         <div>
