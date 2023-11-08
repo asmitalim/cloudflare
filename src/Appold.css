@@ -2,14 +2,6 @@
   text-align: center;
 }
 
-.Lim {
-  color: burlywood ; 
-  text-align: center;
-  background-color: rgb(207, 229, 242) ;
-  margin-bottom: 10rem;
-  padding-bottom: 2rem;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -23,35 +15,17 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 10vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: blueviolet;
+  color: white;
 }
 
 .App-link {
   color: #61dafb;
-  padding-right: 1rem;
-  padding-bottom: 1rem;
-}
-
-.App-link:link {
-  color: green ;
-}
-
-.App-link:visited {
-  color: blue ; 
-}
-
-.App-link:hover {
-  color: burlywood ;
-}
-
-.App-link:active {
-  color: brown ;
 }
 
 @keyframes App-logo-spin {
