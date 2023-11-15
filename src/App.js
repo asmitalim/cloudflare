@@ -29,18 +29,19 @@ function App() {
         <header className="App-header">
         <p> Organization Chart </p>
 
-          <p> some meaningful text here </p>
+          double click on any department to collapse 
 
           <nav>
             <Link className="App-link" to="/orgchart">Organization Chart</Link>
-            <Link className="App-link" to="/me">self json</Link>
-            <Link className="App-link" to="/organization-chart">Organization Chart Json</Link>
+            <Link className="App-link" to="/self">Self</Link>
+            <Link className="App-link" to="/">Home </Link>
           </nav>
+
         <Routes>
-          <Route exact path="/" element={<HomePage></HomePage>}></Route>
-          <Route exact path="/orgchart" element={<HomePage></HomePage>}></Route>
-          <Route exact path="/organization-chart" element={<Organization></Organization>}></Route>
-          <Route exact path="/me" element={<WhoAmI></WhoAmI>}></Route>
+          <Route exact path="/" element={<Organization></Organization>}></Route>
+          <Route exact path="/orgchart" element={<Organization></Organization>}></Route>
+          <Route exact path="/home" element={<HomePage></HomePage>}></Route>
+          <Route exact path="/self" element={<WhoAmI></WhoAmI>}></Route>
         </Routes>
 
         </header>

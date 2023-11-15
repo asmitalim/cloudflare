@@ -10,7 +10,7 @@ const HomePage = () => {
             </Helmet>
 
             <p>
-            {"     "}   this is the home page. 
+            {"     "}   This is the home page. 
             </p>
 
         </div>

@@ -1,0 +1,54 @@
+.Organization {
+  text-align: center;
+}
+
+.Organization {
+  font-family:Arial ;
+  color: goldenrod ; 
+  height: 420px ; 
+  border: 2px solid #000 ;
+  border-radius: 5px ;
+  overflow: auto ;
+  text-align: center;
+  background-color: grey ; 
+  margin-bottom: 10rem;
+  padding-bottom: 2rem;
+  background-size: 10px 10px ;
+  background-image:
+    linear-gradient(to right, lightblue 1px, transparent 1px),
+    linear-gradient(to bottom, lightblue 1px, mintcream 1px);
+}
+
+.Organization-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: blueviolet;
+}
+
+.Organization-link {
+  color: #61dafb;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+.Organization-link:link {
+  color: green ;
+}
+
+.Organization-link:visited {
+  color: blue ; 
+}
+
+.Organization-link:hover {
+  color: burlywood ;
+}
+
+.Organization-link:active {
+  color: brown ;
+}
+

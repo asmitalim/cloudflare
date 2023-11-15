@@ -1,10 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import {useState, useEffect } from 'react' ; 
-import './organization.css' ;
 
 
-import { Chart } from 'react-google-charts' ;
 import loadorgdata from './api/organization-chart/data'
 
 
@@ -36,8 +34,8 @@ export const options = {
 
 const Organization = () => {
 
-    const [orgData, setOrgData ] = useState ([["","",""]]) ;
-    const [graphData, setGraphData ] = useState ([["","",""]]) ;
+    const [orgData, setOrgData ] = useState ([]) ;
+    const [graphData, setGraphData ] = useState ([]) ;
     const [departments, setDepartments ] = useState ([]) ;
 
     const processOrgJson = (orgjson) => {
@@ -62,8 +60,8 @@ const Organization = () => {
     }
 
     useEffect(() => {
-        fetch('https://orgapi.asmita-879.workers.dev/organization-chart')
-        //fetch('api/organization-chart')
+        //fetch('https://orgapi.asmita-879.workers.dev/organization-chart')
+        fetch('api/organization-chart')
             .then((response) => response.json())
             .then((data) => {
                 console.log("Fetch successful",data);
@@ -83,42 +81,7 @@ const Organization = () => {
 
 
     return (
-        <div className="Organization">
-            <Helmet>
-                <title> The Organization Chart </title>
-            </Helmet>
-
-        <Chart 
-            chartType = "OrgChart"
-            data={graphData}
-            options={options}
-        />
-            {
-            /*
-            width="100px"
-            height="400px"
-            */
-            }
-        {/*JSON.stringify(orgData)*/}
-        {/*JSON.stringify(departments)*/}
-        {/*<div>
-            <h3> Departments </h3>
-            { departments.map(d => (
-                <div key={d.name}>
-                    <li>{d.name}</li>
-                </div>
-               ))}
-        </div>
-        */}
-                        
-
-
-
-        </div>
-
-    ) ;
-
-}
-
+        "hello"
+    );
 
 export default Organization; 
