@@ -4,6 +4,7 @@
 
 .Organization {
   font-family:Arial ;
+  font-size: calc(2px + 1.8vmin) ;
   color: goldenrod ; 
   height: 420px ; 
   border: 2px solid #000 ;
@@ -28,6 +29,21 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: blueviolet;
+}
+
+.Organization-node {
+    border-radius: 10px ; 
+}
+
+.Organization-dept {
+    border-radius: 10px ; 
+    background-color: black ; 
+    color: black ; 
+    padding-left: 5rem ; 
+}
+
+.Organization-empl {
+    border-radius: 10px ; 
 }
 
 .Organization-link {
