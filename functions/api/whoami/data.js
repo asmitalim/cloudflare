@@ -1,13 +1,13 @@
 const amidata  = {
-    "name": "Fasmita Limaye",
+    "name": "Asmita Limaye",
     "homepage": "https://linkedin.com/in/asmita-limaye",
     "githubURL": "https://github.com/asmital",
-    "interestingFact": "I like seating on ice",
+    "interestingFact": "I like eating ice",
     "skills": [
-        "windows11",
+        "linux",
         "c",
-        "jacvascript",
-        "css/html",
+        "c++",
+        "java",
         "python"
     ]
 };

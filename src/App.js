@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import Organization from './organization';
 import WhoAmI from './whoami';
 import HomePage from './homepage';
+import JsonQuery from './jsonquery';
 
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
@@ -33,6 +34,7 @@ function App() {
             <Link className="App-link" to="/">Home </Link>
             <Link className="App-link" to="/orgchart">Organization Chart</Link>
             <Link className="App-link" to="/self">Self</Link>
+            <Link className="App-link" to="/search">Search Employees</Link>
           </nav>
 
         <Routes>
@@ -40,6 +42,7 @@ function App() {
           <Route exact path="/orgchart" element={<Organization></Organization>}></Route>
           <Route exact path="/home" element={<HomePage></HomePage>}></Route>
           <Route exact path="/self" element={<WhoAmI></WhoAmI>}></Route>
+          <Route exact path="/search" element={<JsonQuery></JsonQuery>}></Route>
         </Routes>
 
         </header>

@@ -83,7 +83,11 @@ const Organization = () => {
             d.employees.map( e => {
                 let tempe = [{'v':e.name,'f':'<div style="color:darkblue;font-size: 1vmin;">'+e.name+'</div>'},d.managerName,e.office]
                 let erow = empRow(e,d);
-                tempData.push(tempe)
+                if(e.name === d.managerName) {
+                    // skip himself if he is a manager
+                } else {
+                    tempData.push(tempe)
+                }
                 //tempData.push(erow)
             })
         });
