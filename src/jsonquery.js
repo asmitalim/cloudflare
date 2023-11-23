@@ -7,29 +7,59 @@ import {useState, useEffect } from 'react' ;
 import { Form,Button ,Row,Col, Container } from 'react-bootstrap' ;
 import { Card } from 'react-bootstrap/Card' ;
 
+import './jsonquery.css' ;
 import {Employee} from './employee.js' ;
 
+
+const EmployeeTableAlt = (props) => {
+
+    let employees = props.employees ; 
+
+    return (
+        <div className="container">
+            <h3 className="p-3 text-center"> Employees </h3>
+            <table className="table table-stripped table-bordered">
+                <thead>
+                        <tr>
+                                <th> Name </th>
+                                <th> Department </th>
+                                <th> Salary </th>
+                        </tr>
+                </thead>
+                <tbody>
+                        { employees && employees.map(e => 
+                                <tr key={e.name}>
+                                    <td>{e.name}</td>
+                                    <td>{e.department}</td>
+                                    <td>{e.salary}</td>
+                                </tr>
+                         )}
+
+                </tbody>
+            </table>
+        </div>
+    );
+}
 
 
 const EmployeeTable = (props) => {
 
     let employees = props.employees ;
 
-    const eItem = employees.map(e=><Employee key={e} employee={e}></Employee>);
+    //const eItem = employees.map((e,ei)=><tr key={`${e}-${ei}`}><Employee ekey={`${e.name}-${ei}`} employee={e}></Employee> </tr>);
+    const eItem = employees.map((e,ei)=><li key={`${e.name}-${ei}`}><Employee ekey={`${e.name}-${ei}`} employee={e}></Employee> </li>);
 
-    //console.log("Employees", employees);
 
-    /*
-    for ( let x of employees) {
-        console.log("Employee is ",x);
-    }
-    */
-        
 
     return (
-        <table>
-        <tr key={eItem}><Col>{eItem}</Col></tr>
-        </table>
+        <ul className="griddisplay">
+        {/*<tr key={`${eItem}`}><Row>{eItem}</Row></tr>*/}
+        {/* <div className="griddisplay">
+        {eItem}
+        </div>
+        */}
+        {eItem}
+        </ul>
     );
 
 }
@@ -94,8 +124,9 @@ const JsonQuery = () => {
     };
 
     const onFormChange = (e) => {
-        //console.log("OnFormChange:",e.target.value);
-        //console.log("E.Target:",e.target);
+        e.preventDefault();
+        console.log("OnFormChange:",e.target.value);
+        console.log("E.Target:",e.target);
         if( e.target.name === "name") {
             setName(e.target.value);
         }
@@ -105,6 +136,7 @@ const JsonQuery = () => {
     };
 
     const handleReset =(e) => {
+        e.preventDefault();
         console.log("Reset");
         setName(".*");
         setDepartment(".*");
@@ -116,16 +148,21 @@ const JsonQuery = () => {
                         <title> Employees - Search </title>
                     </Helmet>
 
-                    <p> The header navigation stuff is coming </p>
-
-                    <body>
-                    <p> Search Box </p>
+                    <div>
+                       <p> </p>
                     <Container>
                         <Form onSubmit={onFormSubmit}>
+                           <Col>
+                           <Button size="lg" variant="secondary" onClick={handleReset}>Reset</Button>
+                           <span>     </span>
+                           <Button size="lg" type="submit" variant="primary">Submit</Button>
+                            <p></p>
+                            <p></p>
+                           </Col>
                             <Form.Group as={Row}  className="mb-3" controlId="formName">
                                     <Form.Label column sm="2"  className="label">Name</Form.Label>
                                     <Col sm="10">
-                                    <Form.Control size="lg" type="text"  value={name}
+                                    <Form.Control className="control" size="lg" type="text"  value={name}
                                         onChange={onFormChange}
                                         name="name" placeholder="Enter name matching regExp" required/>
                                     </Col>
@@ -134,7 +171,7 @@ const JsonQuery = () => {
                             <Form.Group as={Row} className="mb-3"  controlId="formDepartment">
                                     <Form.Label column sm="2" className="label">Department</Form.Label>
                                     <Col sm="10">
-                                    <Form.Control size="lg" type="text"  value={department}
+                                    <Form.Control className="control" size="lg" type="text"  value={department}
                                         onChange={onFormChange}
                                         name="department" placeholder="Enter department name matching regExp"
                                         required
@@ -143,10 +180,6 @@ const JsonQuery = () => {
                             </Form.Group>
                             <p></p>
                             <p></p>
-                           <Row>
-                           <Button size="lg" variant="secondary" onClick={handleReset}>Reset</Button>
-                           <Button size="lg" type="submit" variant="primary">Submit</Button>
-                           </Row>
                         </Form>
 
 
@@ -157,9 +190,10 @@ const JsonQuery = () => {
                         <hr />
                         <h4> One employee </h4>{ JSON.stringify(employees[0],null,'\t')}
                         </span>
+                        <EmployeeTable className="griddiplay" employees={employees}> </EmployeeTable>
                         */}
 
-                        <EmployeeTable employees={employees}> </EmployeeTable>
+                        <EmployeeTableAlt employees={employees}> </EmployeeTableAlt>
                         {/*
                         <Employee employee={employees[0]}> </Employee>
                         <Employee employee={employees[1]}> </Employee>
@@ -168,7 +202,7 @@ const JsonQuery = () => {
                         */}
 
                     </Container>
-                    </body>
+                    </div>
                 </div>
     ) ;
 

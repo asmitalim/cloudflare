@@ -4,12 +4,8 @@ import {useState, useEffect } from 'react' ;
 
 
 import {Card,Image,Button,Badge,Row,Col} from 'react-bootstrap' ;
-/*
-import Image from 'react-bootstrap/Image' ;
-import Button from 'react-bootstrap/Button' ;
-import Badge from 'react-bootstrap/Badge' ;
-import Row from 'react-bootstrap/Row' ;
-*/
+
+import './jsonquery.css' ;
 
 
 
@@ -37,7 +33,7 @@ const Employee = (props) => {
         } else {
 
             return (
-                <span></span>
+                    <Card.Text className="small">Employee</Card.Text>
             );
 
         }
@@ -57,7 +53,7 @@ const Employee = (props) => {
                 <title> Employee </title>
             </Helmet>
 
-            <Card>
+            <Card className="emplcard"> 
                 <Card.Body>
                     <Card.Title>{empl?.name}{SalaryItem(empl?.salary)}</Card.Title>
                     <Card.Subtitle>{ managerString(empl) }</Card.Subtitle>
@@ -69,34 +65,8 @@ const Employee = (props) => {
             </Card>
         </div>
         );
-    return (
-        <div>
-            <Helmet>
-                <title> Employee </title>
-            </Helmet>
 
-            <Card style={{ width:'12rem'}}>
-                <Card.Img variant="top" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba" />
-                <Card.Body>
-                    <Card.Title>{empl?.name}</Card.Title>
-                    { managerString(empl) }
-                    <Card.Text className="small">Department:{empl?.department}</Card.Text>
 
-                    <Button variant="primary"> Skills 
-                    <div>
-                    <Badge bg="success">{empl?.skills[0]}</Badge><span> </span>
-                    <Badge bg="success">{empl?.skills[1]}</Badge><span> </span>
-                    <Badge bg="success">{empl?.skills[2]}</Badge><span> </span>
-                    <Badge bg="success">{empl?.skills[3]}</Badge><span> </span>
-                    <Badge bg="success">{empl?.skills[4]}</Badge><span> </span>
-                    </div>
-                    </Button>
-                </Card.Body>
-            </Card>
-
-        </div>
-
-    ) ;
 
 }
 

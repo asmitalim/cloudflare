@@ -1,12 +1,64 @@
-.Organization {
+.JsonQuery {
   text-align: center;
+  padding-left: 10px ;
+  padding-right: 10px ;
 }
 
-.Organization {
+.griddisplay {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+}
+
+.label {
+  border: 2px solid #000 ;
+  border-radius: 15px ;
+  background-color: black ; 
+  color: white;
+  text-align: right;
+  padding-left: 5px ;
+}
+.control {
+  border: 2px solid #000 ;
+  border-radius: 15px ;
+  background-color: grey ; 
+  color: yellow ;
+  text-align: left;
+}
+
+.emplcard {
+  border: 2px solid #000 ;
+  border-radius: 15px ;
+  padding-right: 5px ;
+  margin-right: 10px ; 
+  background-color: lightyellow ; 
+  width: 155px;
+  height:250px ; 
+}
+.skill {
+  font-family:Arial ;
+  font-size: .7vmin) ;
+}
+.JsonQuery {
+  font-family:Arial ;
+  font-size: calc(2px + 1.8vmin) ;
+  color: brown ; 
+  height: 840px ; 
+  width:  840px ;
+  border: 2px solid #000 ;
+  border-radius: 5px ;
+  overflow: auto ;
+  text-align: center;
+  background-color: skyblue ; 
+  margin-bottom: 10rem;
+  padding-bottom: 2rem;
+}
+
+.JsonQuery-1 {
   font-family:Arial ;
   font-size: calc(2px + 1.8vmin) ;
   color: goldenrod ; 
-  height: 420px ; 
+  height: 840px ; 
+  width:  840px ;
   border: 2px solid #000 ;
   border-radius: 5px ;
   overflow: auto ;
@@ -20,7 +72,7 @@
     linear-gradient(to bottom, lightblue 1px, mintcream 1px);
 }
 
-.Organization-header {
+.JsonQuery-header {
   background-color: #282c34;
   min-height: 10vh;
   display: flex;
@@ -31,40 +83,40 @@
   color: blueviolet;
 }
 
-.Organization-node {
+.JsonQuery-node {
     border-radius: 10px ; 
 }
 
-.Organization-dept {
+.JsonQuery-dept {
     border-radius: 10px ; 
     background-color: black ; 
     color: black ; 
     padding-left: 5rem ; 
 }
 
-.Organization-empl {
+.JsonQuery-empl {
     border-radius: 10px ; 
 }
 
-.Organization-link {
+.JsonQuery-link {
   color: #61dafb;
   padding-right: 1rem;
   padding-bottom: 1rem;
 }
 
-.Organization-link:link {
+.JsonQuery-link:link {
   color: green ;
 }
 
-.Organization-link:visited {
+.JsonQuery-link:visited {
   color: blue ; 
 }
 
-.Organization-link:hover {
+.JsonQuery-link:hover {
   color: burlywood ;
 }
 
-.Organization-link:active {
+.JsonQuery-link:active {
   color: brown ;
 }
 
