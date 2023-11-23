@@ -11,6 +11,28 @@ import {Employee} from './employee.js' ;
 
 
 
+const EmployeeTable = (props) => {
+
+    let employees = props.employees ;
+
+    const eItem = employees.map(e=><Employee key={e} employee={e}></Employee>);
+
+    //console.log("Employees", employees);
+
+    /*
+    for ( let x of employees) {
+        console.log("Employee is ",x);
+    }
+    */
+        
+
+    return (
+        <table>
+        <tr key={eItem}><Col>{eItem}</Col></tr>
+        </table>
+    );
+
+}
 
 
 
@@ -72,8 +94,8 @@ const JsonQuery = () => {
     };
 
     const onFormChange = (e) => {
-        console.log("OnFormChange:",e.target.value);
-        console.log("E.Target:",e.target);
+        //console.log("OnFormChange:",e.target.value);
+        //console.log("E.Target:",e.target);
         if( e.target.name === "name") {
             setName(e.target.value);
         }
@@ -129,14 +151,17 @@ const JsonQuery = () => {
 
 
                         
+                        {/*
                         <span>
                         {JSON.stringify(employees,["name","department"],'\t')}
                         <hr />
                         <h4> One employee </h4>{ JSON.stringify(employees[0],null,'\t')}
                         </span>
+                        */}
 
-                        <Employee employee={employees[0]}> </Employee>
+                        <EmployeeTable employees={employees}> </EmployeeTable>
                         {/*
+                        <Employee employee={employees[0]}> </Employee>
                         <Employee employee={employees[1]}> </Employee>
                         <Employee employee={employees[2]}> </Employee>
                         <Employee employee={employees[3]}> </Employee>

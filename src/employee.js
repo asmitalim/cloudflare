@@ -3,21 +3,30 @@ import { Helmet } from 'react-helmet';
 import {useState, useEffect } from 'react' ; 
 
 
-import Card from 'react-bootstrap/Card' ;
+import {Card,Image,Button,Badge,Row,Col} from 'react-bootstrap' ;
+/*
 import Image from 'react-bootstrap/Image' ;
 import Button from 'react-bootstrap/Button' ;
 import Badge from 'react-bootstrap/Badge' ;
+import Row from 'react-bootstrap/Row' ;
+*/
 
 
 
 
 const Employee = (props) => {
 
-    console.log("Employee getting constructerd properties",props);
+    let pemployee = props.employee ; 
 
-    const pemployee = props.employee ; 
+    //console.log("Employee getting constructerd properties",props);
 
-    const [empl, setEmpl ] = useState(pemployee);
+
+    const [empl, setEmpl ] = useState({});
+
+
+    useEffect(()=> {
+        setEmpl(pemployee);
+    },[]);
 
     const managerString = (e) => {
         if( e?.isManager) {
@@ -34,11 +43,30 @@ const Employee = (props) => {
         }
    };
 
+
+   const SkillItem = (skill) => {
+        return <div><Badge bg="success">{skill}</Badge><span> </span></div> ;
+   }
+   const SalaryItem = (sal) => {
+        return <div><Badge bg="secondary">{sal}</Badge><span> </span></div> ;
+   }
+
     return (
         <div>
-        <hr/>
-            {JSON.stringify(empl)}
-            <hr/>
+            <Helmet>
+                <title> Employee </title>
+            </Helmet>
+
+            <Card>
+                <Card.Body>
+                    <Card.Title>{empl?.name}{SalaryItem(empl?.salary)}</Card.Title>
+                    <Card.Subtitle>{ managerString(empl) }</Card.Subtitle>
+                    <Card.Text className="small">{empl?.department}</Card.Text>
+                    <Col>
+                    {empl?.skills?.map( s => SkillItem(s))}
+                    </Col>
+                </Card.Body>
+            </Card>
         </div>
         );
     return (
