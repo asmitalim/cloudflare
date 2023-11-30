@@ -9,12 +9,13 @@ const HomePage = () => {
     return (
         <div className="homepage">
             <Helmet>
-                <title> Home Page </title>
+                <title> Summary </title>
             </Helmet>
 
             <div className="dark">
                 <p>
-                {" "}   <code style={{color:"#ffff00"}}> This application is written using cloudflare workers and pages </code>
+                {" "}   <code style={{color:"#ffff00"}}> This application is written using cloudflare workers and pages. All core functionality along with extra credit has been implemented. Extra features: Implementation of an visual organization chart (double click to expand) which gets updated on posting a new org chart JSON, along with a search feature which lets you search using regex, which also gets updated after POST of a new org chart JSON.</code>
+
                 </p>
             </div>
             <Card> 

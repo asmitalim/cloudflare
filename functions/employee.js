@@ -14,7 +14,7 @@ var handleQuery = async (request, env) => {
   console.log("Query ");
   let body = await request.text();
   console.log(body);
-  let queryJson = JSON.parse(body);
+  let queryJson = await JSON.parse(body);
   console.log("Query JSON is ", queryJson);
   let namePattern = queryJson.name ;
   let departmentPattern = queryJson.department ;
@@ -53,6 +53,7 @@ var handleQuery = async (request, env) => {
 
   //let { namePattern, departmentPattern, minSalaryPattern, maxSalaryPattern, officePattern, skillsPattern } = queryJson;
   console.log(` name ${namePattern}, dept ${departmentPattern }`)
+  console.log(` skills ${skillsPattern}, office ${officePattern }`)
 
   var namere = null;
   var deptre = null ;
@@ -82,40 +83,42 @@ var handleQuery = async (request, env) => {
       data = JSON.parse(localkvdata);
       let empls = [] ;
       for ( let d of data.organization.departments) {
-        console.log("doing for department ",d);
+        //console.log("doing for department ",d);
         d.employees.map( e => {
-            console.log("doing for ",e);
+            //console.log("doing for ",e);
             let matched = true ;
             if(namere !== null) {
                 matched = matched && namere.test(e.name);
-                console.log("name:",matched);
+                //console.log("name:",matched);
         }
             if( officere !== null) {
-                matched = matched && namere.test(e.office);
-                console.log("office:",matched);
+                matched = matched && officere.test(e.office);
+                //console.log("office:",matched);
             }
             if( deptre !== null) {
                 matched = matched && deptre.test(e.department)
-                console.log("deptre",matched);
+                //console.log("deptre",matched);
             }
             if ( skillre !== null) {
                 let skillmatch = false ;
-                for ( let s in e.skills ) {
+                for ( let s of e.skills ) {
+                    //console.log("Doing for skill",s);
                   skillmatch = skillmatch || skillre.test(s) ;
+                  //console.log("skill match is ",skillmatch);
                 }
                 matched = matched && skillmatch ;
-                console.log("skills",matched);
+                //console.log("skills",matched);
             }
             if(matched) {
-                if( (e.salary < maxSalary) && (e.salary > minSalary)) {
-                    console.log("matched so pushing");
+                if( (e.salary <= maxSalary) && (e.salary >= minSalary)) {
+                    //console.log("matched so pushing");
                     empls.push(e)
                 }
                 else {} 
 
                     
             } else {
-              console.log("skipping");
+              //console.log("skipping");
             }
 
 

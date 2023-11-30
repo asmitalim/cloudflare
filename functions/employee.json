@@ -1,0 +1,9 @@
+{
+"name": "^K.*",
+"department": ".*",
+"office": ".*",
+"skills": "Caching",
+"minSalary": 0,
+"maxSalary": 5000
+}
+
