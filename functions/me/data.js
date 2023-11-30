@@ -1,5 +1,5 @@
 const amidata  = {
-    "name": "FussAsmita Limaye",
+    "name": "Asmita Limaye",
     "homepage": "https://linkedin.com/in/asmita-limaye",
     "githubURL": "https://github.com/asmital",
     "interestingFact": "I like eating ice",

@@ -1,4 +1,4 @@
-const orgdata  = 
+const loadorgdata  = 
 {
     "organization": {
         "departments": [
@@ -1109,3 +1109,5 @@ const orgdata  =
         ]
     }
 };
+
+export default  loadorgdata ; 
