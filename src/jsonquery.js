@@ -21,17 +21,25 @@ const EmployeeTableAlt = (props) => {
             <table className="table table-stripped table-bordered">
                 <thead>
                         <tr>
-                                <th> Name </th>
                                 <th> Department </th>
+                                <th> Name </th>
+                                <th> IsManager </th>
                                 <th> Salary </th>
+                                <th> office </th>
+                                <th> skills </th>
                         </tr>
                 </thead>
                 <tbody>
                         { employees && employees.map(e => 
                                 <tr key={e.name}>
-                                    <td>{e.name}</td>
                                     <td>{e.department}</td>
+                                    <td>{e.name}</td>
+                                    { e.isManager ? <td> Manager </td> : <td> </td> }
                                     <td>{e.salary}</td>
+                                    <td>{e.office}</td>
+                                    <td>{ e.skills && e.skills.map((s) => 
+                                        <li>{s}</li>
+                                    )}</td>
                                 </tr>
                          )}
 
@@ -69,18 +77,22 @@ const EmployeeTable = (props) => {
 
 const JsonQuery = () => {
 
-    const [name,setName] = useState("K.*");
+    const [name,setName] = useState(".*");
     const [department,setDepartment] = useState(".*");
+    const [office,setOffice] = useState(".*");
+    const [minSalary,setMinSalary] = useState(0);
+    const [maxSalary,setMaxSalary] = useState(5000);
+    const [skills,setSkills] = useState(".*");
+
     const [employees,setEmployees] = useState([]);
 
 
     useEffect(()=> {
 
-
         let x = fetch('https://orgapi.asmita-879.workers.dev/employee',{
             method:'POST',
             //body: JSON.stringify(values),
-            body: JSON.stringify({name,department}),
+            body: JSON.stringify({name,department,office,minSalary,maxSalary,skills}),
             headers:{
                 //'Content-type':'application/json; charset=UTF-8',
             },
@@ -106,7 +118,7 @@ const JsonQuery = () => {
         let x = fetch('https://orgapi.asmita-879.workers.dev/employee',{
             method:'POST',
             //body: JSON.stringify(values),
-            body: JSON.stringify({name,department}),
+            body: JSON.stringify({name,department,office,minSalary,maxSalary,skills}),
             headers:{
                 //'Content-type':'application/json; charset=UTF-8',
             },
@@ -119,27 +131,41 @@ const JsonQuery = () => {
             .catch((err) => {
                 console.error(err.message);
             });
-        //setName("A.*");
-        //setDepartment("D.*");
     };
 
     const onFormChange = (e) => {
         e.preventDefault();
-        console.log("OnFormChange:",e.target.value);
-        console.log("E.Target:",e.target);
+        //console.log("OnFormChange:",e.target.value);
+        //console.log("E.Target:",e.target);
         if( e.target.name === "name") {
             setName(e.target.value);
         }
         if( e.target.name === "department") {
             setDepartment(e.target.value);
         }
+        if( e.target.name === "office") {
+            setOffice(e.target.value);
+        }
+        if( e.target.name === "minSalary") {
+            setMinSalary(e.target.value);
+        }
+        if( e.target.name === "maxSalary") {
+            setMaxSalary(e.target.value);
+        }
+        if( e.target.name === "skills") {
+            setSkills(e.target.value);
+        }
     };
 
     const handleReset =(e) => {
         e.preventDefault();
-        console.log("Reset");
+        //console.log("Reset");
         setName(".*");
         setDepartment(".*");
+        setOffice(".*");
+        setMinSalary(0);
+        setMaxSalary(5000);
+        setSkills(".*");
     }
 
             return (
@@ -159,25 +185,67 @@ const JsonQuery = () => {
                             <p></p>
                             <p></p>
                            </Col>
-                            <Form.Group as={Row}  className="mb-3" controlId="formName">
-                                    <Form.Label column sm="2"  className="label">Name</Form.Label>
-                                    <Col sm="10">
-                                    <Form.Control className="control" size="lg" type="text"  value={name}
+
+                            <Form.Group as={Row}  className="mb-2" controlId="formName">
+                                    <Form.Label column sm="3" className="label">Name</Form.Label>
+                                    <Col sm="9">
+                                    <Form.Control className="control" size="sm" type="text"  value={name}
                                         onChange={onFormChange}
-                                        name="name" placeholder="Enter name matching regExp" required/>
+                                        name="name" placeholder="Enter name matching regExp" />
                                     </Col>
 
                             </Form.Group>
-                            <Form.Group as={Row} className="mb-3"  controlId="formDepartment">
-                                    <Form.Label column sm="2" className="label">Department</Form.Label>
-                                    <Col sm="10">
-                                    <Form.Control className="control" size="lg" type="text"  value={department}
+
+                            <Form.Group as={Row} className="mb-2"  controlId="formDepartment">
+                                    <Form.Label column sm="3" className="label">Department</Form.Label>
+                                    <Col sm="9">
+                                    <Form.Control className="control" size="sm" type="text"  value={department}
                                         onChange={onFormChange}
                                         name="department" placeholder="Enter department name matching regExp"
-                                        required
                                     />
                                     </Col>
                             </Form.Group>
+
+                            <Form.Group as={Row} className="mb-2"  controlId="formOffice">
+                                    <Form.Label column sm="3" className="label">Office</Form.Label>
+                                    <Col sm="9">
+                                    <Form.Control className="control" size="sm" type="text"  value={office}
+                                        onChange={onFormChange}
+                                        name="office" placeholder="Enter Office name matching regExp"
+                                    />
+                                    </Col>
+                            </Form.Group>
+
+                            <Form.Group as={Row} className="mb-2"  controlId="formMinSalary">
+                                    <Form.Label column sm="3" className="label">Minimum Salary</Form.Label>
+                                    <Col sm="9">
+                                    <Form.Control className="control" size="sm" type="text"  value={minSalary}
+                                        onChange={onFormChange}
+                                        name="minSalary" placeholder="Enter bottom of the salary range "
+                                    />
+                                    </Col>
+                            </Form.Group>
+
+                            <Form.Group as={Row} className="mb-2"  controlId="formMaxSalary">
+                                    <Form.Label column sm="3" className="label">Maximum Salary</Form.Label>
+                                    <Col sm="9">
+                                    <Form.Control className="control" size="sm" type="text"  value={maxSalary}
+                                        onChange={onFormChange}
+                                        name="maxSalary" placeholder="Enter top of the salary range "
+                                    />
+                                    </Col>
+                            </Form.Group>
+
+                            <Form.Group as={Row} className="mb-2"  controlId="formSkills">
+                                    <Form.Label column sm="3" className="label">Skills</Form.Label>
+                                    <Col sm="9">
+                                    <Form.Control className="control" size="sm" type="text"  value={skills}
+                                        onChange={onFormChange}
+                                        name="skills" placeholder="Enter RegExp for Skills"
+                                    />
+                                    </Col>
+                            </Form.Group>
+
                             <p></p>
                             <p></p>
                         </Form>
