@@ -98,8 +98,8 @@ const Organization = () => {
     }
 
     useEffect(() => {
-        fetch('https://orgapi.asmita-879.workers.dev/organization-chart')
-        //fetch('api/organization-chart')
+        //fetch('https://orgapi.asmita-879.workers.dev/organization-chart')
+        fetch('organization-chart')
             .then((response) => response.json())
             .then((data) => {
                 console.log("Fetch successful",data);

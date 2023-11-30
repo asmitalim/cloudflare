@@ -18,6 +18,18 @@
                         ]
                     },
                     {
+                        "name": "Aziel Gibson",
+                        "department": "CDN",
+                        "salary": 145,
+                        "office": "New York",
+                        "isManager": true,
+                        "skills": [
+                            "Caching",
+                            "C++",
+                            "AI"
+                        ]
+                    },
+                    {
                         "name": "Carl Nava",
                         "department": "CDN",
                         "salary": 230,
@@ -288,6 +300,18 @@
                         ]
                     },
                     {
+                        "name": "Belen Norman",
+                        "department": "Developer Platform",
+                        "salary": 252,
+                        "office": "London",
+                        "isManager": true,
+                        "skills": [
+                            "HTML",
+                            "Rust",
+                            "GoLang"
+                        ]
+                    },
+                    {
                         "name": "Melanie Esparza",
                         "department": "Developer Platform",
                         "salary": 231,
@@ -546,6 +570,18 @@
                 "managerName": "Audrey Leblanc",
                 "employees": [
                     {
+                        "name": "Audrey Leblanc",
+                        "department": "Accounting",
+                        "salary": 154,
+                        "office": "Singapore",
+                        "isManager": true,
+                        "skills": [
+                            "HTML",
+                            "CSS",
+                            "Postgres"
+                        ]
+                    },
+                    {
                         "name": "Eden Roy",
                         "department": "Accounting",
                         "salary": 190,
@@ -803,6 +839,18 @@
                 "name": "Bots",
                 "managerName": "Braden McMahon",
                 "employees": [
+                    {
+                        "name": "Braden McMahon",
+                        "department": "Bots",
+                        "salary": 219,
+                        "office": "San Francisco",
+                        "isManager": true,
+                        "skills": [
+                            "Distributed Systems",
+                            "Rust",
+                            "AI"
+                        ]
+                    },
                     {
                         "name": "Marcelo Sullivan",
                         "department": "Bots",

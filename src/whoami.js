@@ -18,7 +18,8 @@ const WhoAmI = () => {
     const [amiData, setAmiData ] = useState (loadamidata) ;
 
     useEffect(() => {
-        fetch('https://orgapi.asmita-879.workers.dev/me')
+        //fetch('https://orgapi.asmita-879.workers.dev/me')
+        fetch('me')
             .then((response) => {
                 let xyz = response.json()
                 console.log("response great8 ",xyz)

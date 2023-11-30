@@ -89,7 +89,8 @@ const JsonQuery = () => {
 
     useEffect(()=> {
 
-        let x = fetch('https://orgapi.asmita-879.workers.dev/employee',{
+        //let x = fetch('https://orgapi.asmita-879.workers.dev/employee',
+        let x = fetch('employee',{
             method:'POST',
             //body: JSON.stringify(values),
             body: JSON.stringify({name,department,office,minSalary,maxSalary,skills}),
@@ -115,7 +116,8 @@ const JsonQuery = () => {
         let formData = new FormData(e.target);
         console.log("form Data ",formData);
         //console.log("Values = ",values);
-        let x = fetch('https://orgapi.asmita-879.workers.dev/employee',{
+        //let x = fetch('https://orgapi.asmita-879.workers.dev/employee',
+        let x = fetch('employee',{
             method:'POST',
             //body: JSON.stringify(values),
             body: JSON.stringify({name,department,office,minSalary,maxSalary,skills}),

@@ -19,6 +19,18 @@ const orgdata  =
                         ]
                     },
                     {
+                        "name": "Aziel Gibson",
+                        "department": "CDN",
+                        "salary": 145,
+                        "office": "New York",
+                        "isManager": true,
+                        "skills": [
+                            "Caching",
+                            "C++",
+                            "AI"
+                        ]
+                    },
+                    {
                         "name": "Carl Nava",
                         "department": "CDN",
                         "salary": 230,
@@ -289,6 +301,18 @@ const orgdata  =
                         ]
                     },
                     {
+                        "name": "Belen Norman",
+                        "department": "Developer Platform",
+                        "salary": 252,
+                        "office": "London",
+                        "isManager": true,
+                        "skills": [
+                            "HTML",
+                            "Rust",
+                            "GoLang"
+                        ]
+                    },
+                    {
                         "name": "Melanie Esparza",
                         "department": "Developer Platform",
                         "salary": 231,
@@ -546,6 +570,18 @@ const orgdata  =
                 "name": "Accounting",
                 "managerName": "Audrey Leblanc",
                 "employees": [
+                    {
+                        "name": "Audrey Leblanc",
+                        "department": "Accounting",
+                        "salary": 154,
+                        "office": "Singapore",
+                        "isManager": true,
+                        "skills": [
+                            "HTML",
+                            "CSS",
+                            "Postgres"
+                        ]
+                    },
                     {
                         "name": "Eden Roy",
                         "department": "Accounting",
@@ -805,6 +841,18 @@ const orgdata  =
                 "managerName": "Braden McMahon",
                 "employees": [
                     {
+                        "name": "Braden McMahon",
+                        "department": "Bots",
+                        "salary": 219,
+                        "office": "San Francisco",
+                        "isManager": true,
+                        "skills": [
+                            "Distributed Systems",
+                            "Rust",
+                            "AI"
+                        ]
+                    },
+                    {
                         "name": "Marcelo Sullivan",
                         "department": "Bots",
                         "salary": 241,
@@ -1061,9 +1109,3 @@ const orgdata  =
         ]
     }
 };
-
-export default  orgdata;
-
-
-
-
