@@ -18,7 +18,7 @@ var handleQuery = async (request, env) => {
   let namePattern = queryJson.name;
   let departmentPattern = queryJson.department;
   let officePattern = queryJson.office;
-  let skillsPattern = queryJson.skills;
+  let skillsPattern = queryJson.skill;
   let minSalary = queryJson.minSalary;
   let maxSalary = queryJson.maxSalary;
 
