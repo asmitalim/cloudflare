@@ -3,11 +3,30 @@
 }
 
 .Lim {
-  color: burlywood ; 
+
   text-align: center;
+  border-radius: 25px ;
+  /*
+  color: burlywood ; 
   background-color: rgb(207, 229, 242) ;
   margin-bottom: 10rem;
   padding-bottom: 2rem;
+  */
+}
+
+.AppTitle {
+    color: sienna ;
+    font-size: 4vmin ; 
+    background: goldenrod ; 
+    padding-top: 5px ;
+    padding-bottom: 10px ;
+    padding-left: 15px ;
+    padding-right: 20px ;
+    margin : 15px ; 
+    border-radius: 25px ; 
+    /*
+    background: grey ; 
+    */
 }
 
 .App-logo {
@@ -17,12 +36,22 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    width: 192px ;
+    height: 192px ;
+    border-radius: 25px ;
+
+    /* animation: App-logo-spin infinite 15s alternate;  */
+    padding: 5px ;
   }
 }
 
 .App-header {
+  /*
   background-color: thistle ;
+  */
+  background: url('https://png.pngtree.com/back_origin_pic/04/11/52/1c3cbd5d9aaf4db97aa059d74cad2d31.jpg') ;
+  background-size: 200px 100px ;
+  background-repeat: repeat ;
   min-height: 10vh;
   display: flex;
   flex-direction: column;
@@ -32,10 +61,28 @@
   color: sienna;
 }
 
+h1 {
+    color: black ; 
+}
+
+.App-nav {
+  background : sienna ;
+  padding-top: 10px ;
+  padding-left: 15px ;
+  padding-right: 15px ;
+  padding-bottom: 15px ;
+  border-radius : 25px ; 
+  margin: 15px ;
+}
+
 .App-link {
   color: #61dafb;
   padding-right: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: .5rem;
+  background : lightpink ;
+  text-align: center ; 
+  padding-left: 1rem ; 
+  border-radius : 15px ; 
 }
 
 .App-link:link {
@@ -56,9 +103,9 @@
 
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(-5deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(5deg);
   }
 }

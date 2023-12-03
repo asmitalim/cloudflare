@@ -62,7 +62,7 @@ li {
   height: 840px ; 
   width:  840px ;
   border: 2px solid #000 ;
-  border-radius: 5px ;
+  border-radius: 25px ;
   overflow: auto ;
   text-align: center;
   background-color: skyblue ; 
@@ -98,6 +98,7 @@ li {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: blueviolet;
+  border-radius: 25px ;
 }
 
 .JsonQuery-node {

@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet';
 import './homepage.css' ;
 import {Image} from 'react' ;
 import {Card} from 'react-bootstrap' ;
+import {Row} from 'react-bootstrap' ;
+import {Col} from 'react-bootstrap' ;
 
 
 const HomePage = () => {
@@ -27,12 +29,25 @@ const HomePage = () => {
                 </p>
 
             </div>
-            <Card> 
-                <Card.Img src="https://images.unsplash.com/photo-1699006599430-4ba35169ff8b" />
+            <Card className="limcard"> 
+                <Card.Img className="HomeImage" src="https://images.unsplash.com/photo-1699006599430-4ba35169ff8b" />
                 <Card.Title> The Cleveland Museum of Art </Card.Title>
                 <Card.Subtitle>  - Unsplash image   </Card.Subtitle>
+                <Card.Text> <i><b>javascript,react,cloudflare,npm etc. </b></i> </Card.Text>
+            </Card> 
+            {/*
+            <Col>
+            <Row>
+            <Card> 
+                <Card.Img src="orgchart512x512.jpg" />
+                <Card.Title>  </Card.Title>
+                <Card.Subtitle>  </Card.Subtitle>
+                <Card.Text> <i></i> </Card.Text>
                 <Card.Text> <i>javascript,react,cloudflare,npm etc. </i> </Card.Text>
             </Card> 
+            </Row>
+            </Col>
+            */}
         </div>
 
     ) ;
@@ -41,8 +56,3 @@ const HomePage = () => {
 
 
 export default HomePage; 
-/*
-                <Card>
-                         <Image src="https://images.unsplash.com/photo-1699006599430-4ba35169ff8b" />
-                </Card>
-*/

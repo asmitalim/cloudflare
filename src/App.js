@@ -1,6 +1,8 @@
 import logo from './logo.svg';
+import orgchart from './orgchart512x512.png';
 import './App.css';
 import { Helmet } from 'react-helmet';
+import { Image } from 'react-bootstrap';
 
 import Organization from './organization';
 import WhoAmI from './whoami';
@@ -28,9 +30,10 @@ function App() {
         </Helmet>
 
         <header className="App-header">
-        <p> Organization Chart Application </p>
+        <p className="AppTitle"> Organization Chart Application </p>
+            <Image className="App-logo" src={orgchart} ></Image>
 
-          <nav>
+          <nav className="App-nav">
             <Link className="App-link" to="/">Home </Link>
             <Link className="App-link" to="/orgchart">Organization Chart</Link>
             <Link className="App-link" to="/self">Self</Link>

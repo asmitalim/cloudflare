@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 300px ;
   font-size: 1.1vrem ;
+  background: lightblue ;
 }
 
 
@@ -16,19 +17,27 @@ body {
     border: blue 1px solid;
     padding: 15px ;
     margin : 1px ;
-    border-radius: 5px ;
+    border-radius: 25px ;
+}
+
+.limcard {
+  height: 150px ;
 }
 
 .homepage {
   height: 300px ;
   padding: 0px ;
   border: white 1px solid;
-  border-radius: 5px ;
+  border-radius: 25px ;
   font-size: 1.3rem ;
   margin: 5px;
   color: sienna;
   background: sienna;
   ;
+}
+
+.HomeImage {
+    height: 300px ; 
 }
 
 h5 {
@@ -37,6 +46,10 @@ h5 {
 
 i {
     color: skyblue ;
+}
+
+b {
+    color: darkblue ;
 }
 
 code {
