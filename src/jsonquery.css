@@ -10,10 +10,16 @@
 }
 
 .table {
-  border: 6px solid #79F ;
+  border: 0px solid #79F ;
+  border-radius : 25px ;
 }
 .table-stripped {
     background-color: brown ; 
+}
+
+
+.tr {
+  border-radius : 25px ;
 }
 
 
