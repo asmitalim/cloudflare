@@ -126,7 +126,7 @@ var handleQuery = async (request, env) => {
       }
       console.log("--------------------------- Interesting employees ------------------");
       console.table(empls);
-        body = JSON.stringify(empls);
+        body = JSON.stringify({"employees":empls});
 
 
 

@@ -82,7 +82,7 @@ const JsonQuery = () => {
     const [office,setOffice] = useState(".*");
     const [minSalary,setMinSalary] = useState(0);
     const [maxSalary,setMaxSalary] = useState(5000);
-    const [skills,setSkills] = useState(".*");
+    const [skill,setSkill] = useState(".*");
 
     const [employees,setEmployees] = useState([]);
 
@@ -93,15 +93,15 @@ const JsonQuery = () => {
         let x = fetch('employee',{
             method:'POST',
             //body: JSON.stringify(values),
-            body: JSON.stringify({name,department,office,minSalary,maxSalary,skills}),
+            body: JSON.stringify({name,department,office,minSalary,maxSalary,skill}),
             headers:{
                 //'Content-type':'application/json; charset=UTF-8',
             },
         });
         x.then((response) => response.json())
             .then((data) => {
-                console.table(data);
-                setEmployees(data);
+                console.table(data.employees);
+                setEmployees(data.employees);
             })
             .catch((err) => {
                 console.error(err.message);
@@ -120,15 +120,15 @@ const JsonQuery = () => {
         let x = fetch('employee',{
             method:'POST',
             //body: JSON.stringify(values),
-            body: JSON.stringify({name,department,office,minSalary,maxSalary,skills}),
+            body: JSON.stringify({name,department,office,minSalary,maxSalary,skill}),
             headers:{
                 //'Content-type':'application/json; charset=UTF-8',
             },
         });
         x.then((response) => response.json())
             .then((data) => {
-                console.table(data);
-                setEmployees(data);
+                console.table(data.employees);
+                setEmployees(data.employees);
             })
             .catch((err) => {
                 console.error(err.message);
@@ -154,8 +154,8 @@ const JsonQuery = () => {
         if( e.target.name === "maxSalary") {
             setMaxSalary(e.target.value);
         }
-        if( e.target.name === "skills") {
-            setSkills(e.target.value);
+        if( e.target.name === "skill") {
+            setSkill(e.target.value);
         }
     };
 
@@ -167,7 +167,7 @@ const JsonQuery = () => {
         setOffice(".*");
         setMinSalary(0);
         setMaxSalary(5000);
-        setSkills(".*");
+        setSkill(".*");
     }
 
             return (
@@ -238,12 +238,12 @@ const JsonQuery = () => {
                                     </Col>
                             </Form.Group>
 
-                            <Form.Group as={Row} className="mb-2"  controlId="formSkills">
-                                    <Form.Label column sm="3" className="label">Skills</Form.Label>
+                            <Form.Group as={Row} className="mb-2"  controlId="formSkill">
+                                    <Form.Label column sm="3" className="label">Skill</Form.Label>
                                     <Col sm="9">
-                                    <Form.Control className="control" size="sm" type="text"  value={skills}
+                                    <Form.Control className="control" size="sm" type="text"  value={skill}
                                         onChange={onFormChange}
-                                        name="skills" placeholder="Enter RegExp for Skills"
+                                        name="skill" placeholder="Enter RegExp for Skill"
                                     />
                                     </Col>
                             </Form.Group>

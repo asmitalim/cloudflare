@@ -1,20 +1,60 @@
 import orgdata from './organization-chart/data' 
 
+export async function onRequest(context) {
 
 
-export async function onRequestGet(context) {
-    let request = context.request 
-    let env = context.env
+    let request = context.request  ;
+    let env = context.env ;
+
+    const { method } = request ; 
+
     console.log("Request is ",request);
     console.log("Environment is ",env);
+    console.log("Method is ",method);
+
+    const putKV = (key, val) => env.KVSPACE.put(key, val);
+    const getKV = (key) => env.KVSPACE.get(key);
+    const orgkey = `log-generic`;
+
+    await putKV(orgkey,('Request(Generic)'+JSON.stringify(request)));
+
+    if( method === "POST") 
+        return await handlePostRequestOrg(request,env);
+    else if ( method === "GET") 
+        return await handleGetRequestOrg(request, env);
+    else 
+        return new Response(`${method} on /organization-chart is not supported`,
+  { headers: { "Content-Type": "text/json", "Access-Control-Allow-Origin": "*" }, status: 404 }
+  );
+
+}
+
+
+export async function onRequestgety(context) {
+    let request = context.request  ;
+    let env = context.env ;
+    console.log("Request is ",request);
+    console.log("Environment is ",env);
+    const putKV = (key, val) => env.KVSPACE.put(key, val);
+    const getKV = (key) => env.KVSPACE.get(key);
+    const orgkey = `logget`;
+
+    await putKV(orgkey,('Get'+request));
+
     return await handleGetRequestOrg(request, env);
 }
 
-export async function onRequestPost(context) {
-    let request = context.request 
-    let env = context.env
+export async function onRequestposty(context) {
+    const putKV = (key, val) => env.KVSPACE.put(key, val);
+    const getKV = (key) => env.KVSPACE.get(key);
+    const orgkey = `logput`;
+
+
+    let request = context.request  ;
+    let env = context.env ;
     console.log("Request is ",request);
     console.log("Environment is ",env);
+    await putKV(orgkey,('Post'+request));
     return await handlePostRequestOrg(request,env);
 }
 
@@ -55,7 +95,7 @@ var getOrganization = async (request, env) => {
   const orgkey = `organization`;
   let data;
   const localkvdata = await getKV(orgkey);
-  data = JSON.parse(localkvdata);
+  data = await JSON.parse(localkvdata);
   const body = JSON.stringify(data);
   return new Response(
     body,
@@ -73,7 +113,7 @@ const getKV = (key) => env.KVSPACE.get(key);
   await putKV(orgkey,orgValue);
   console.log("Data stored in kvspace",orgValue)
   let localkvdata = await getKV(orgkey);
-  data = JSON.parse(localkvdata);
+  data = await JSON.parse(localkvdata);
   const body = JSON.stringify(data);
   return new Response(
     body,
