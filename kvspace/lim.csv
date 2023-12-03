@@ -1,0 +1,11 @@
+name,department,salary,office,isManager,skill1,skill2,skill3
+Madhuri Dixit,Hollywood,100,Austin,FALSE,Dancing,Acting,Speaking
+Salman Khan,Hollywood,154,Singapore,TRUE,Dancing,Acting,Body building
+Amitabh Bachhan,Hollywood,219,San Francisco,TRUE,Voice delivery,Acting,comedy
+Virat Kohli,BCCI,252,London,TRUE,hook,drive,cut
+Sachin Tendulkar,BCCI,80,Lisbon,FALSE,Drive,Cut,Defensive Shot
+Steve Smith,Australia,145,New York,TRUE,Sticky,Cut,Offdrive
+Maxell,Australia,190,Austin,FALSE,fast scoring,six hitting,offspin
+Bedi,Spin,241,Singapore,FALSE,leftarm,Spin,flighted ball
+Chandra,Spin,231,San Francisco,FALSE,Legspin,Fast cytter,yorker
+Venkat Raghvan,Spin,230,London,TRUE,Line and length,Offspin,flighed

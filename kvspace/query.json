@@ -1,0 +1,6 @@
+{
+    "name":"*",
+    "department": "bots",
+    "minSalary": 345,
+    "maxSalary": 500,
+}

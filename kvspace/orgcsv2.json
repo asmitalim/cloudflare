@@ -1,0 +1,3 @@
+{
+"organizationData":"name,department,salary,office,isManager,skill1,skill2,skill3\nMadhuri Dixit,Hollywood,100,Austin,FALSE,Dancing,Acting,Speaking\nSalman Khan,Hollywood,154,Singapore,TRUE,Dancing,Acting,Body building\nAmitabh Bachhan,Hollywood,219,San Francisco,TRUE,Voice delivery,Acting,comedy\nVirat Kohli,BCCI,252,London,TRUE,hook,drive,cut\nSachin Tendulkar,BCCI,80,Lisbon,FALSE,Drive,Cut,Defensive Shot\nSteve Smith,Australia,145,New York,TRUE,Sticky,Cut,Offdrive\nMaxell,Australia,190,Austin,FALSE,fast scoring,six hitting,offspin\nBedi,Spin,241,Singapore,FALSE,leftarm,Spin,flighted ball\nChandra,Spin,231,San Francisco,FALSE,Legspin,Fast cytter,yorker\nVenkat Raghvan,Spin,230,London,TRUE,Line and length,Offspin,flighed\n"
+ }

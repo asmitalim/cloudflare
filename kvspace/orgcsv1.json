@@ -1,0 +1,3 @@
+{
+"organizationData":"name,department,salary,office,isManager,skill1,skill2,skill3\nKDK,CDN,80,Lisbon,FALSE,Caching,C++,AI\nBhide,Developer Platform,100,Austin,FALSE,Typescript,C++,GoLang\nMhapsekar ,Accounting,154,Singapore,TRUE,HTML,CSS,Postgres\nKapoor ,Bots,219, San Francisco,TRUE,Distributed Systems,Rust,AI\nYNK ,Developer Platform,252,London,TRUE,HTML,Rust,GoLang\nSundar ,CDN,145,New York,TRUE,Caching,C++,AI\n Gupta Vijay,Accounting,190,Austin,FALSE,Typescript,C++,GoLang\n Maya ,Bots,241,Singapore,FALSE,HTML,CSS,Postgres\n Kharabe ,Developer Platform,231,San Francisco,FALSE,Distributed Systems,Rust,AI\nAmlesh Mal,CDN,230,London,FALSE,HTML,Rust, GoLang\n"
+ }

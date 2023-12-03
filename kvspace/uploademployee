@@ -1,0 +1,7 @@
+#!/bin/bash
+wrangler kv:key  --namespace-id="d866c43c3f4c41ab8af651c27df83ade" put organization "`cat organization.json`"
+wrangler kv:key  --namespace-id="d866c43c3f4c41ab8af651c27df83ade" put orgcsvdata   "`cat employees.csv`"
+wrangler kv:key  --namespace-id="d866c43c3f4c41ab8af651c27df83ade" put me   "`cat me.json`"
+wrangler kv:key --local   --namespace-id="d866c43c3f4c41ab8af651c27df83ade" put organization "`cat organization.json`"
+wrangler kv:key --local   --namespace-id="d866c43c3f4c41ab8af651c27df83ade" put orgcsvdata   "`cat employees.csv`"
+wrangler kv:key --local   --namespace-id="d866c43c3f4c41ab8af651c27df83ade" put me   "`cat me.json`"
