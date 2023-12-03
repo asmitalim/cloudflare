@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+kvspace/node_modules
 /.pnp
 .pnp.js
 
